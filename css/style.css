@@ -4,7 +4,6 @@ body {
   background-color: #efefef;
 }
 
-
 #contact-form{
   margin-top: 10%;
   background-color: #fff;
@@ -19,13 +18,146 @@ body {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-#details {
+/*Details area*/
+/*.details {
   top: 0;
   border: 2px solid red;
   height: 100%;
   position: absolute;
   left:0;
+}*/
+
+.details {
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  background: #ffffff;
+  /*border-radius: 5px;*/
+  padding: 40px 0 40px 0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: .3s ease;
 }
+
+.details h1 {
+    position: relative;
+    /*left: -15px;*/
+    z-index: 1;
+    border-left: 5px solid black;
+    /*Diabling this gives it a bit of head room*/
+    /*margin: 0 0 35px;*/
+    padding: 10px 0 10px 50px;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.social-icon {
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+
+.details.alt {
+    position: absolute;
+    top: 40px;
+    right: -70px;
+    z-index: 10;
+    width: 140px;
+    height: 140px;
+    background: none;
+    border-radius: 100%;
+    box-shadow: none;
+    padding: 0;
+    transition: .3s ease;
+}
+
+.details .title {
+    position: relative;
+    z-index: 1;
+    border-left: 5px solid #ed2553;
+    margin: 0 0 35px;
+    padding: 10px 0 10px 50px;
+    color: #ed2553;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.details .input-container {
+    position: relative;
+    margin: 0 60px 50px;
+}
+
+
+.details .input-container input {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    color: #212121;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+/*Button Toggle to Send Form*/
+.details.alt .btn-toggle {
+  position: relative;
+  background: #c0c0c0;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.details.alt .btn-toggle:before {
+    content: '\f040';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+/*Hides everything from contact-email form*/
+.details.alt .title,
+.details.alt .input-container,
+.details.alt .button-container {
+    left: 100px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.details.alt .title {
+    position: relative;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+
+.details.alt .title .close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 60px;
+    display: inline;
+    color: #ffffff;
+    font-size: 58px;
+    font-weight: 400;
+}
+
+.details.alt .title .close:before {
+    content: '\00d7';
+}
+
 
 #map {
   top: 0;
@@ -34,4 +166,9 @@ body {
   position: absolute;
   right:0;
 }
+
+
+
+
+
 
