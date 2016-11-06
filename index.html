@@ -5,32 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Custom Contact Form</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
+    <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
 
   </head>
 
   <body>
-
+<!-- Start Container -->
  <div class="container">
-    <!--  -->
-    <div id="contact-form" class="col-md-8"> 
+    <!--Start Contact Form  -->
+    <div id="contact-form" class="col-md-8 col-sm-8 col-xs-10"> 
       <div class="container">
-        <!-- Details side -->
-        <div id="details" class="col-md-6">
-          <p>I am the details area</p>
+        <!-- Start Details-->
+        <div class="col-md-6 col-sm-6 col-xs-6 details">
+          <h1 class="title">Contact me</h1>
+        </div> <!-- End Details -->
+
+        <!-- <div class=""> -->
+        <div class="col-md-6 col-sm-6 col-xs-6 details alt">
+          <!-- <div class="row"> -->
+          <div class="btn-toggle"></div>
+          <!-- </div> -->
+          <div class="row">
+            <h1 class="title">Drop me a message
+              <div class="close"></div>
+            </h1>
+            <form>
+              <div class="input-container">
+                <input type="text" id="Username" required="required"/>
+                <label for="Username">name</label>
+                <div class="bar"></div>
+              </div>
+              <div class="input-container">
+                <input type="password" id="Password" required="required"/>
+                <label for="Password">email</label>
+                <div class="bar"></div>
+              </div>
+              <div class="input-container">
+                <textarea rows="5" cols="100" id="Message" required="required" placeholder="Enter your message here"/></textarea>
+                
+                <div class="bar"></div>
+              </div>
+              <div class="button-container">
+                <button><span>Next</span></button>
+              </div>
+            </form>
+          </div>
+          <!-- </div> -->
         </div>
-        <!-- Map side -->
-        <div id="map" class="col-md-6">
-          <p>I am the map area</p>
-        </div>
-      </div>
-    </div><!--end of container -->
+
+        
+        <!-- Start Map -->
+        <!-- <div id="map" class="col-md-6 col-sm-6 col-xs-6"> -->
+          <!-- <p>I am the map area</p> -->
+        </div> <!--End Map-->
+      </div><!--End Container-->
+    </div><!--End Contact-Form-->
+  </div><!--End Container-->
 
 
 
@@ -38,6 +74,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+
+    <script src="js/script-main.js"></script>
   </body>
 </html>
