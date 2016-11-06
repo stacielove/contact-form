@@ -9,8 +9,6 @@ body {
   background-color: #fff;
   position: absolute;
   height: 60%;
-  /*border: 2px solid blue;*/
-  /*right: 20px;*/
   padding-top: 15px;
   -webkit-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
@@ -18,7 +16,100 @@ body {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.social-icon {
+  text-transform: uppercase;
+  letter-spacing: .25em;
+}
+
+/***********/
+/*Container*/
+/***********/
+
+/*ACTIVE*/
+/*Second card (active) pops up over the other one*/
+.container.active .details:nth-child(2) {
+    background: #c0c0c0;
+}
+
+.container.active .details.alt {
+  top: 12px;
+  left: -20px;
+  width: 70%;
+  /*min-width: 50%;*/
+  height:100%;
+  border-radius: 2px;
+  /*padding: 60px 15px 40px;*/
+  padding: 20px 15px;
+  overflow: hidden;
+  transition: .2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+
+/*This part goes from pink circle to pink active container*/
+.container.active .details.alt .btn-toggle {
+    position: relative;
+    /*top: 80px;*/
+    /*right: 1000px;*/
+    /*box-shadow: none;*/
+    -webkit-transform: scale(15);
+    -moz-transform: scale(15);
+    -ms-transform: scale(15);
+    -o-transform: scale(15);
+    transform: scale(15);
+    transition: transform .2s ease-Out;
+}
+
+/*.container.active  .details.alt .btn-toggle {
+  position: relative;
+  background: #c0c0c0;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+}*/
+
+/*This empties the container because for some reason it has a giant line through it*/
+.container.active .details.alt .btn-toggle:before {
+    content: '';
+}
+
+/*makes all the words and stuff visible!*/
+.container.active .details.alt .title,
+.container.active .details.alt .input-container,
+.container.active .details.alt .button-container {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: .2s ease;
+}
+
+/*transition for title*/
+/*.container.active .details.alt .title {
+    transition-delay: .3s;
+}*/
+/*Transition for everything else*/
+/*.container.active .details.alt .input-container {
+    transition-delay: .4s;
+}*/
+/*Staggered transition for password*/
+/*.container.active .details.alt .input-container:nth-child(2) {
+    transition-delay: .5s;
+}*/
+/*Staggered transitio for repeat password - because it wasnt correct*/
+/*.container.active .details.alt .input-container:nth-child(3) {
+    transition-delay: .6s;
+}*/
+/*delay for button container*/
+/*.container.active .details.alt .button-container {
+    transition-delay: .8s;
+}*/
+
+/**************/
 /*Details area*/
+/**************/
+
 /*.details {
   top: 0;
   border: 2px solid red;
@@ -27,6 +118,7 @@ body {
   left:0;
 }*/
 
+/*Details Pane*/
 .details {
   position: absolute;
   top:0;
@@ -36,40 +128,37 @@ body {
   /*border-radius: 5px;*/
   padding: 40px 0 40px 0;
   box-sizing: border-box;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: .3s ease;
+  /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
+  /*transition: .3s ease;*/
 }
 
-.details h1 {
-    position: relative;
+/*.details h1 {*/
+    /*position: relative;*/
     /*left: -15px;*/
-    z-index: 1;
-    border-left: 5px solid black;
+    /*z-index: 1;*/
+    /*border-left: 5px solid black;*/
     /*Diabling this gives it a bit of head room*/
     /*margin: 0 0 35px;*/
-    padding: 10px 0 10px 50px;
+/*    padding: 10px 0 10px 50px;
     font-size: 32px;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-.social-icon {
-  text-transform: uppercase;
-  letter-spacing: .25em;
-}
+}*/
 
 .details.alt {
     position: absolute;
-    top: 40px;
-    right: -70px;
+    /*top: 40px;*/
+    /*right: -70px;*/
+    top: 0;
     z-index: 10;
-    width: 140px;
-    height: 140px;
+    /*width: 140px;*/
+    /*height: 140px;*/
     background: none;
-    border-radius: 100%;
+    /*border-radius: 25%;*/
     box-shadow: none;
-    padding: 0;
-    transition: .3s ease;
+    padding-left: 40%;
+    /*transition: .2s ease;*/
+    transition: .2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
 
 .details .title {
@@ -158,6 +247,53 @@ body {
     content: '\00d7';
 }
 
+.details.alt .input-container input {
+    color: #ffffff;
+}
+
+.details.alt .input-container input:focus ~ label {
+    color: #ffffff;
+}
+
+.details.alt .input-container input:focus ~ .bar:before,
+.details.alt .input-container input:focus ~ .bar:after {
+    background: #ffffff;
+}
+
+.details.alt .input-container input:valid ~ label {
+    color: #ffffff;
+}
+
+.details.alt .input-container label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.details.alt .input-container .bar {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.details.alt .button-container button {
+    width: 100%;
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.details.alt .button-container button span {
+    color: #ed2553;
+}
+
+.details.alt .button-container button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.details.alt .button-container button:active:before,
+.details.alt .button-container button:focus:before {
+    display: none;
+}
+
+/*****/
+/*MAP*/
+/*****/
 
 #map {
   top: 0;
